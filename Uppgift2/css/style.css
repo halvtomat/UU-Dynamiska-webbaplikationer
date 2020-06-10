@@ -67,7 +67,11 @@ header {
 }
 header > h1 {
 	font-size: 3em;
-	margin-bottom: 5px;
+	margin-bottom: 0.1em;
+}
+header > p {
+	text-align: start;
+	margin: 0px;
 }
 nav > ul {
 	display: flex;
@@ -94,40 +98,70 @@ nav > ul > li > a:hover{
 	color: #B6244F;
 	border-bottom: 1px solid #B6244F;
 }
-#products {
-	display: flex;
-	flex-direction: column;
+a {
+	text-decoration: none;
+	color: #B6244F;
 }
-#products > article {
-	margin-top: 3em;
-	text-align: center;
-}
-#products > article > h2 {
-	font-size: 2em;
-}
-#products > article > .date {
-	margin-bottom: 10px;
-}
-#products > article > img {
+img {
 	margin-left: 30%;
 	margin-right: 30%;
+	margin-bottom: 0.4em;
 	width: 40%;
 	box-shadow: 0px 0px 3px 1px black;
 	transition: all .4s;
 }
-#products > article > img:hover {
+img:hover {
 	margin-left: 15%;
 	margin-right: 15%;
 	width: 70%;
 	box-shadow: 0px 0px 5px 1px #B6244F;
 }
-#products > article > p {
+h2 {
+	font-size: 2em;
+	text-align: center;
+}
+h3 {
+	font-size: 2.4em;
+	text-align: center;
+}
+p {
 	margin-left: 10%;
 	margin-right: 10%;
 	width: 80%;
+	text-align: center;
+}
+.date {
+	font-size: 1em;
+}
+#products ,#classes ,#story ,#newsletter {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2em;
+}
+#products > article {
+	margin-top: 3em;
+}
+#products > article > .date {
+	margin-bottom: 10px;
+}
+th, td {
+	padding: 0.4em;
+	border: 1px solid black;
+}
+#story > * {
+	margin-bottom: 0.4em;
+}
+#newsletter{
+	border-top: 1px solid black;
+}
+footer > p{
+	color: black;
+	font-size: 0.7em;
+	text-align: start;
+	margin: 0px
 }
 /*---------------------------------MOBILE VERSION---------------------------------*/
-@media screen and (max-width: 500px){
+@media screen and (max-width: 800px){
 	body {
 		width: 100vw;
 		margin: 0;
