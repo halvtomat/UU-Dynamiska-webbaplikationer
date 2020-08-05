@@ -4,6 +4,7 @@
 
 <head>
 	<title>Djupviks Hamn</title>
+	<link rel="stylesheet" href="../css/style.css" />
 	<meta charset="utf-8" />
 </head>
 
@@ -16,30 +17,84 @@
 
 	<nav>
 		<ul>
-			<li id="active"><a href="#">Hem</a></li>
-			<li><a href="#">Medlemmar</a></li>
-			<li><a href="#">Historia</a></li>
-			<li><a href="#">Kontakt</a></li>
+			<li id="active"><a href="../../index.html">Hem</a></li>
+			<li><a href="./medlemmar.html">Medlemmar</a></li>
+			<li><a href="./historia.html">Historia</a></li>
+			<li><a href="./gästplats.html">Gästplats</a></li>
 		</ul>
 	</nav>
 
-
 	<main>
-        <div id="root"></div>
+		<h2>Kontaktformulär</h2>
+		<form method="POST" action="#">
+
+			<fieldset>
+				<legend>Ärende</legend>
+				<p>
+					<label>Rubrik:</label>
+					<input type="text" name="rubrik">
+				</p>
+				<p>
+					<label>Meddelande:</label>
+					<textarea rows="2" cols="25" name="msg"></textarea>         
+				</p>
+			</fieldset>			
+			<fieldset>
+				<legend>Vad gäller ärendet?</legend>
+				<p>
+					<input type="radio" name="category" value="boat" id="boat">
+					<label for="boat">Båtplats</label>
+				</p>
+				<p>
+					<input type="radio" name="category" value="member" id="member">
+					<label for="member">Medlem</label>
+				</p>
+				<p>
+					<input type="radio" name="category" value="other" id="other">
+					<label for="other">Övrigt</label>                    
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Hur vill du bli kontaktad?</legend>
+				<p>
+					<input type="radio" name="contact" value="email" id="email">
+					<label for="email">E-post</label>
+				</p>
+				<p>
+					<input type="radio" name="contact" value="tel" id="tel">
+					<label for="tel">Telefon</label>
+				</p>
+				<p>
+					<input type="radio" name="contact" value="no" id="no">
+					<label for="no">Inte alls</label>                    
+				</p>
+			</fieldset>
+			<fieldset>
+				<legend>Dina kontaktuppgifter</legend>
+				<p>
+					<label>Mobilnummer:</label>
+					<input type="tel" name="tel">                  
+				</p>
+				<p>
+					<label>Email:</label>
+					<input type="email" name="email">                  
+				</p>
+			</fieldset>
+			<input type="submit" value="kontakta">
+		</form>
 	</main>
 
-	<footer class="text-center">
+    <footer class="text-center">
 		<nav>
 			<ul>
-				<li><a href="kontakt.html">Kontakta oss</a></li>
+				<li><a href="./kontakt.html">Kontakta oss</a></li>
 				<li><a href="#">Om oss</a></li>
 				<li><a href="#">Rapportera fel</a></li>
 			</ul>
 		</nav>
 		<hr />
 		<p>
-			Din väg från bänken rakt in i målet!<br>
-			&copy; Fotbadskollen
+			&copy; Djupviks Hamn
 			<script type="text/javascript">
 				document.write(new Date().getFullYear());
 			</script>
