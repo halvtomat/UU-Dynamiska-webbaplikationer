@@ -1,7 +1,10 @@
-import {getData, processResponse} from './data.js';
-import Home from './containers/home.js';
+import { getData, processResponse } from './data.js';
+import { draw } from './draw.js';
 
-const root = document.getElementById("root");
+const root = document.getElementById("smhi-widget");
 
-const screen = Home();
-root.innerHTML = screen;
+const table = document.createElement('table');
+
+getData().then(processResponse).then(data => draw(data, table));
+
+root.appendChild(table);
