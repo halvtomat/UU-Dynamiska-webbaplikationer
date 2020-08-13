@@ -46,14 +46,14 @@ export function drawTable(data, table, today){
 
     table.insertRow(0);
     table.rows[0].innerHTML = tableHeader;
-
     for(let i = 0; i < 3; i++){
+        let hourData = data.timeSeries[(i*3)+shift];
         table.insertRow(i+1);
         table.rows[i+1].innerHTML = formatRow(
-            data.timeSeries[(i*3)+shift].validTime.substr(11,2),
-            data.timeSeries[(i*3)+shift].parameters[1].values[0],
-            data.timeSeries[(i*3)+shift].parameters[3].values[0],
-            data.timeSeries[(i*3)+shift].parameters[4].values[0],
-            getSky(data.timeSeries[(i*3)+shift].parameters[7].values[0]));
+            hourData.validTime.substr(11,2),
+            hourData.parameters.find(e => e.name === 't').values[0],
+            hourData.parameters.find(e => e.name === 'wd').values[0],
+            hourData.parameters.find(e => e.name === 'ws').values[0],
+            getSky(hourData.parameters.find(e => e.name === 'tcc_mean').values[0]));
     }
 }
