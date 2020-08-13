@@ -1,4 +1,4 @@
-const header = '<th>KL</th><th>Temp</th><th>Vind Riktning</th><th>Vind Hastighet</th><th>Himmel</th>';
+const tableHeader = '<th>KL</th><th>Temp (C)</th><th>Vind Riktning</th><th>Vind Hastighet (m/s)</th><th>Himmel</th>';
 
 function formatRow(time, temp, windDir, windSpd, sky){
     return '<td>' + time + '</td><td>' + temp + '</td><td>' + windDir + '</td><td>' + windSpd + '</td><td>' + sky + '</td>';
@@ -40,18 +40,20 @@ function getSky(tcc){
     return sky;
 }
 
-export function draw(data, table){
+export function drawTable(data, table, today){
+    let shift;
+    today ? shift = 0 : shift = 24;
+
     table.insertRow(0);
-    table.rows[0].innerHTML = header;
+    table.rows[0].innerHTML = tableHeader;
 
     for(let i = 0; i < 3; i++){
-        console.log(data.timeSeries[i]);
         table.insertRow(i+1);
         table.rows[i+1].innerHTML = formatRow(
-            data.timeSeries[i*3].validTime.substr(11,2),
-            data.timeSeries[i*3].parameters[1].values[0],
-            data.timeSeries[i*3].parameters[3].values[0],
-            data.timeSeries[i*3].parameters[4].values[0],
-            getSky(data.timeSeries[i*3].parameters[7].values[0]));
+            data.timeSeries[(i*3)+shift].validTime.substr(11,2),
+            data.timeSeries[(i*3)+shift].parameters[1].values[0],
+            data.timeSeries[(i*3)+shift].parameters[3].values[0],
+            data.timeSeries[(i*3)+shift].parameters[4].values[0],
+            getSky(data.timeSeries[(i*3)+shift].parameters[7].values[0]));
     }
 }

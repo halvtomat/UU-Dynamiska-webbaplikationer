@@ -1,0 +1,11 @@
+#smhi-widget {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#smhi-widget > * {
+    text-align: center;
+    margin-top: 4%;
+}

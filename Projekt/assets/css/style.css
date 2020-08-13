@@ -60,7 +60,8 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    background-color: #EDF6F9;
+	background-color: #EDF6F9;
+	min-height: 80vh;
 }
 main > * {
     margin: 0% 10% 0% 10%;
@@ -113,12 +114,17 @@ img {
 	box-shadow: 0px 0px 3px 1px black;
 	transition: all .4s;
 }
+.big-img {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
 h2 {
 	font-size: 2em;
 	text-align: center;
 }
 h3 {
-	font-size: 2.4em;
+	font-size: 1.5em;
 	text-align: center;
 }
 p {
@@ -130,26 +136,12 @@ p {
 .date {
 	font-size: 1em;
 }
-#products ,#classes ,#story ,#newsletter {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 2em;
-}
-#products > article {
-	margin-top: 3em;
-}
-#products > article > .date {
-	margin-bottom: 10px;
-}
 th, td {
 	padding: 0.4em;
 	border: 1px solid black;
 }
-#story > * {
-	margin-bottom: 0.4em;
-}
-#newsletter{
-	border-top: 1px solid black;
+#members > table {
+	font-size: 0.8em;
 }
 footer > p{
 	color: black;
